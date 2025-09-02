@@ -35,32 +35,32 @@ This repository contains screenshots taken on **September 2, 2025**.
 
 ## 🖼️ Screenshots
 ### Screenshot 1
-![Screenshot 1](images/Screenshot 2025-09-02 131215.png)
+![Screenshot 1](![images/Screenshot 2025-09-02 131215.png])
 
 ### Screenshot 2
-![Screenshot 2](images/Screenshot 2025-09-02 131251.png)
+![Screenshot 2](![images/Screenshot 2025-09-02 131251.png])
 
 ### Screenshot 3
-![Screenshot 3](images/Screenshot 2025-09-02 131318.png)
+![Screenshot 3](![images/Screenshot 2025-09-02 131318.png])
 
 ### Screenshot 4
-![Screenshot 4](images/Screenshot 2025-09-02 131346.png)
+![Screenshot 4](![images/Screenshot 2025-09-02 131346.png])
 
 ### Screenshot 5
-![Screenshot 5](images/Screenshot 2025-09-02 131417.png)
+![Screenshot 5](![images/Screenshot 2025-09-02 131417.png])
 
 ### Screenshot 6
-![Screenshot 6](images/Screenshot 2025-09-02 131441.png)
+![Screenshot 6](![images/Screenshot 2025-09-02 131441.png])
 
 ### Screenshot 7
-![Screenshot 7](images/Screenshot 2025-09-02 131511.png)
+![Screenshot 7](![images/Screenshot 2025-09-02 131511.png])
 
 ### Screenshot 8
-![Screenshot 8](images/Screenshot 2025-09-02 131606.png)
+![Screenshot 8](![images/Screenshot 2025-09-02 131606.png])
 
 ### Screenshot 9
-![Screenshot 9](images/Screenshot 2025-09-02 132739.png)
+![Screenshot 9](![images/Screenshot 2025-09-02 132739.png])
 
 ### Screenshot 10
-![Screenshot 10](images/Screenshot 2025-09_2_132919png)
+![Screenshot 10](![images/Screenshot 2025-09_2_132919png])
 
