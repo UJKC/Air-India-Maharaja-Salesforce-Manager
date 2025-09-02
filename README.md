@@ -62,5 +62,5 @@ This repository contains screenshots taken on **September 2, 2025**.
 ![images/Screenshot 2025-09-02 132739.png](https://github.com/UJKC/Air-India-Maharaja-Salesforce-Manager/blob/main/images/Screenshot%202025-09-02%20132739.png)
 
 ### Screenshot 10
-![images/Screenshot 2025-09_2_132919png](https://github.com/UJKC/Air-India-Maharaja-Salesforce-Manager/blob/main/images/Screenshot%202025-09_2_132919.png)
+![images/Screenshot 2025-09_2_132919.png](https://github.com/UJKC/Air-India-Maharaja-Salesforce-Manager/blob/main/images/Screenshot%202025-09-02%20132919.png)
 
