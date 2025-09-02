@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Related Aircraft Incidents" icon-name="standard:incident">
+      <div class="slds-p-around_medium">
+        <template if:true={incidents}>
+          <lightning-datatable
+            key-field="Id"
+            data={incidents}
+            columns={columns}
+            hide-checkbox-column
+            show-row-number-column>
+          </lightning-datatable>
+        </template>
+  
+        <template if:true={error}>
+          <p class="slds-text-color_error">⚠️ Error loading incidents.</p>
+        </template>
+      </div>
+    </lightning-card>
+  </template>

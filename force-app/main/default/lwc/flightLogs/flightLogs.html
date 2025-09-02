@@ -1,0 +1,43 @@
+<template>
+    <lightning-card title="Flight Logs">
+        <div class="slds-m-around_medium">
+            <!-- Filters Section -->
+            <div
+                class="slds-m-around_medium slds-box slds-p-around_medium slds-theme_default slds-rounded_medium slds-shadow_small">
+                <h2 class="slds-text-heading_small slds-m-bottom_medium">Filters</h2>
+                <div class="slds-grid slds-wrap slds-gutters">
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning-input type="checkbox" label="General" name="general" checked={generalChecked}
+                            onchange={handleCheckboxChange} class="slds-m-bottom_small">
+                        </lightning-input>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning-input type="checkbox" label="Delayed" name="delayed" checked={delayedChecked}
+                            onchange={handleCheckboxChange} class="slds-m-bottom_small">
+                        </lightning-input>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning-input type="checkbox" label="Cancelled" name="cancelled" checked={cancelledChecked}
+                            onchange={handleCheckboxChange} class="slds-m-bottom_small">
+                        </lightning-input>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Child Component for Logs Display -->
+            <c-flight-logs-child 
+                logs={paginatedLogs} 
+                has-logs={hasLogs}
+                error={error}
+                current-page={currentPage}
+                total-pages={totalPages}
+                is-prev-disabled={isPrevDisabled}
+                is-next-disabled={isNextDisabled}
+                onprev={handlePrev}
+                onnext={handleNext}>
+            </c-flight-logs-child>
+        </div>
+    </lightning-card>
+</template>

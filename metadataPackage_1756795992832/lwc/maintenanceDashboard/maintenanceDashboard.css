@@ -1,0 +1,65 @@
+.maintenance-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.maintenance-card {
+    flex: 1 1 250px;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: #f4f6f9; /* default background */
+}
+
+.maintenance-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.status-scheduled {
+    background-color: #e3f2fd; /* light blue */
+}
+
+.status-inprogress {
+    background-color: #fff9c4; /* light yellow */
+}
+
+.status-cleared {
+    background-color: #c8e6c9; /* light green */
+}
+
+.status-objection {
+    background-color: #ffcdd2; /* light red */
+}
+
+.status-default {
+    background-color: #e0e0e0; /* light gray */
+}
+
+.status {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.name {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.date {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.checkbox-count {
+    font-size: 1rem;
+}
+
+.checkbox-count .big {
+    font-size: 2rem;
+    font-weight: bold;
+}

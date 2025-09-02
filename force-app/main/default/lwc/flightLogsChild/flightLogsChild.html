@@ -1,0 +1,27 @@
+<template>
+    <template if:true={hasLogs}>
+        <template for:each={logs} for:item="log">
+            <div key={log.Id} class="slds-box slds-m-around_x-small">
+                <p><b>{log.formattedDate}</b> - {log.Stage__c}</p>
+                <p>{log.Message__c}</p>
+            </div>
+        </template>
+
+        <!-- Pagination Controls -->
+        <div class="slds-m-top_small slds-align_absolute-center">
+            <lightning-button variant="neutral" label="Previous" onclick={handlePrevClick} disabled={isPrevDisabled}>
+            </lightning-button>
+            <lightning-button variant="neutral" label="Next" onclick={handleNextClick} disabled={isNextDisabled}
+                class="slds-m-left_x-small"></lightning-button>
+            <span class="slds-m-left_small">Page {currentPage} of {totalPages}</span>
+        </div>
+    </template>
+
+    <template if:true={error}>
+        <p class="slds-text-color_error">Error loading logs.</p>
+    </template>
+
+    <template if:false={hasLogs}>
+        <p class="slds-text-color_weak">No logs to display.</p>
+    </template>
+</template>

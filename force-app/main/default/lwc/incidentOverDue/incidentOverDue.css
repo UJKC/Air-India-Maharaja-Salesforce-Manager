@@ -1,0 +1,18 @@
+.incident-card {
+    border-radius: 0.5rem;
+    background: #ffffff;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    min-height: 120px;
+}
+.incident-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.incident-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #16325c;
+    margin-bottom: 0.5rem;
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cabbot_reach_before_Taking_Off</fullName>
+    <active>true</active>
+    <errorConditionFormula>Destination_Time__c  &lt;  Schedule__c</errorConditionFormula>
+    <errorDisplayField>Destination_Time__c</errorDisplayField>
+    <errorMessage>Bro what is your destination time</errorMessage>
+</ValidationRule>

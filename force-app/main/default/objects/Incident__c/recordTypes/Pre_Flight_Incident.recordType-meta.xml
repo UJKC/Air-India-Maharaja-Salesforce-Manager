@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pre_Flight_Incident</fullName>
+    <active>true</active>
+    <label>Pre Flight Incident</label>
+    <picklistValues>
+        <picklist>Concerned_Issue__c</picklist>
+        <values>
+            <fullName>Emergency Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fuel Check</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instruments Functional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oil level Check</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tires and Brake</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Layout_Pick__c</picklist>
+        <values>
+            <fullName>Pre Flight</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Queued</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resolved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Under Investigation</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

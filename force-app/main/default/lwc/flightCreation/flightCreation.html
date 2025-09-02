@@ -1,0 +1,45 @@
+<template>
+    <lightning-card title="Create Flight" icon-name="utility:add">
+        <div class="slds-p-around_medium">
+            <lightning-record-edit-form 
+                object-api-name="Flight__c"
+                onsuccess={handleSuccess}
+                onerror={handleError}>
+
+                <!-- Flight Name -->
+                <lightning-input-field field-name="Name"></lightning-input-field>
+
+                <!-- Flight Type (Picklist) -->
+                <lightning-input-field field-name="Flight_Type__c"></lightning-input-field>
+
+                <!-- Status (Picklist) -->
+                <lightning-input-field field-name="Status__c"></lightning-input-field>
+
+                <!-- Aircraft (Lookup) -->
+                <lightning-input-field field-name="Aircraft__c"></lightning-input-field>
+
+                <!-- Start / End Airport (Lookup) -->
+                <lightning-input-field field-name="Start_Airport__c"></lightning-input-field>
+                <lightning-input-field field-name="End_Airport__c"></lightning-input-field>
+
+                <!-- Schedule + Destination Time -->
+                <lightning-input-field field-name="Schedule__c"></lightning-input-field>
+                <lightning-input-field field-name="Destination_Time__c"></lightning-input-field>
+
+                <!-- Buttons -->
+                <div class="slds-m-top_medium">
+                    <lightning-button 
+                        type="submit" 
+                        label="Create Flight" 
+                        variant="brand">
+                    </lightning-button>
+                    <lightning-button 
+                        type="reset" 
+                        label="Clear" 
+                        class="slds-m-left_x-small">
+                    </lightning-button>
+                </div>
+            </lightning-record-edit-form>
+        </div>
+    </lightning-card>
+</template>

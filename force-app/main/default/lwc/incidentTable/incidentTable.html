@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="✈️ Aircraft-Related Incidents" icon-name="standard:task">
+        <div class="slds-p-around_medium">
+            <lightning-datatable
+                key-field="Id"
+                data={incidentData}
+                columns={columns}
+                hide-checkbox-column="true"
+                show-row-number-column="true"
+                class="slds-box slds-theme_default">
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

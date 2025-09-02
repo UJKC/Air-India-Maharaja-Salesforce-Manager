@@ -1,0 +1,40 @@
+.incident-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.incident-card {
+    flex: 1 1 250px;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: #f4f6f9; /* default */
+}
+
+.incident-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.status-Queued { background-color: #e3f2fd; }              /* light blue */
+.status-Under_Investigation { background-color: #fff9c4; } /* light yellow */
+.status-Resolved { background-color: #c8e6c9; }           /* light green */
+.status-default { background-color: #e0e0e0; }            /* gray fallback */
+
+.incident-name {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.incident-status {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.incident-desc {
+    font-size: 0.85rem;
+    color: #555;
+}

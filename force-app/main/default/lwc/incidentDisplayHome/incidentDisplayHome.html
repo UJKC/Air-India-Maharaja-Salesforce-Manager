@@ -1,0 +1,50 @@
+<template>
+    <lightning-card title="✈️ Incident Dashboard" icon-name="standard:incident">
+        <div class="dashboard-container">
+
+            <!-- Queued -->
+            <div class="status-column queued">
+                <h2 class="status-header">Queued</h2>
+                <template if:true={groupedIncidents.Queued}>
+                    <template for:each={groupedIncidents.Queued} for:item="incident">
+                        <div key={incident.Id} 
+                             class="incident-card queued-card" 
+                             data-id={incident.Id} 
+                             onclick={handleCardClick}>
+                            <p class="incident-title">{incident.Concerned_Issue__c}</p>
+                            <p><strong>Aircraft:</strong> {incident.Aircraft__r.Name}</p>
+                            <p><strong>Description:</strong> {incident.Describe_Incident__c}</p>
+                        </div>
+                    </template>
+                </template>
+                <template if:false={groupedIncidents.Queued}>
+                    <p class="empty-msg">No incidents in queue</p>
+                </template>
+            </div>
+
+            <!-- Under Investigation -->
+            <div class="status-column investigating">
+                <h2 class="status-header">Under Investigation</h2>
+                <template if:true={groupedIncidents.UnderInvestigation}>
+                    <template for:each={groupedIncidents.UnderInvestigation} for:item="incident">
+                        <div key={incident.Id} 
+                             class="incident-card investigating-card" 
+                             data-id={incident.Id} 
+                             onclick={handleCardClick}>
+                            <p class="incident-title">{incident.Concerned_Issue__c}</p>
+                            <p><strong>Aircraft:</strong> {incident.Aircraft__r.Name}</p>
+                            <p><strong>Description:</strong> {incident.Describe_Incident__c}</p>
+                        </div>
+                    </template>
+                </template>
+                <template if:false={groupedIncidents.UnderInvestigation}>
+                    <p class="empty-msg">No incidents under investigation</p>
+                </template>
+            </div>
+
+            <!-- Resolved -->
+            
+
+        </div>
+    </lightning-card>
+</template>

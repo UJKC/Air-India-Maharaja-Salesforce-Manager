@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Avionics_and_Instruments__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Navigation Systems, Communication Systems, Flight Instruments, Autopilot System</description>
+    <label>Avionics and Instruments</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

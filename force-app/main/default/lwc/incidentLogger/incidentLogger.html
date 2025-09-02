@@ -1,0 +1,52 @@
+<template>
+    <lightning-card title="📝 Log Preflight Incident" icon-name="standard:task">
+        <div class="slds-p-around_medium slds-grid slds-wrap slds-gutters">
+            <!-- Combo Box Section -->
+            <div class="slds-col slds-size_1-of-1 slds-m-bottom_medium">
+                <lightning-combobox
+                    name="issue"
+                    label="Concerned Issue"
+                    value={selectedIssue}
+                    placeholder="Select an issue"
+                    options={issueOptions}
+                    onchange={handleIssueChange}>
+                </lightning-combobox>
+            </div>
+
+            <!-- Text Area Section -->
+            <div class="slds-col slds-size_1-of-1 slds-m-bottom_medium">
+                <lightning-textarea
+                    name="description"
+                    label="Describe Incident"
+                    value={description}
+                    placeholder="Enter incident details"
+                    onchange={handleDescriptionChange}>
+                </lightning-textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="slds-col slds-size_1-of-1 slds-m-top_medium">
+                <lightning-button
+                    label="Submit Incident"
+                    variant="destructive"
+                    onclick={submitIncident}
+                    class="slds-m-right_small">
+                </lightning-button>
+            </div>
+
+            <!-- Success Message -->
+            <template if:true={successMessage}>
+                <div class="slds-col slds-size_1-of-1 slds-m-top_medium">
+                    <p class="slds-text-color_success slds-text-heading_small">{successMessage}</p>
+                </div>
+            </template>
+
+            <!-- Error Message -->
+            <template if:true={errorMessage}>
+                <div class="slds-col slds-size_1-of-1 slds-m-top_medium">
+                    <p class="slds-text-color_error slds-text-heading_small">{errorMessage}</p>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

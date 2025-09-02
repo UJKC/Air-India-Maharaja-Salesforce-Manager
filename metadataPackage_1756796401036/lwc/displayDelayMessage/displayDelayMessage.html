@@ -1,0 +1,14 @@
+<template>
+    <lightning-card>
+        <template if:true={showDelayMessage}>
+            <div style="font-size: 24px; font-weight: bold; color: red; text-align: center; padding: 10px;">
+                ⚠️ Flight {flightName} is Delayed!
+            </div>
+        </template>
+        <template if:true={showCancelMessage}>
+            <div style="font-size: 24px; font-weight: bold; color: red; text-align: center; padding: 10px;">
+                ⚠️ Flight {flightName} is Cancelled!
+            </div>
+        </template>
+    </lightning-card>
+</template>

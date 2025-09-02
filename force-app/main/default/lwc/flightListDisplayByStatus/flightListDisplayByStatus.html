@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title="Flights" icon-name="utility:search">
+        <div class="slds-m-around_medium slds-grid slds-wrap slds-gutters">
+            <lightning-combobox
+                name="statusFilter"
+                label="Filter by Status"
+                placeholder="Select Status"
+                value={selectedStatus}
+                options={statusOptions}
+                onchange={handleStatusChange}
+                class="slds-col slds-size_1-of-3">
+            </lightning-combobox>
+    
+            <lightning-input
+                type="date"
+                name="scheduleFilter"
+                label="Filter by Schedule"
+                value={selectedSchedule}
+                onchange={handleScheduleChange}
+                class="slds-col slds-size_1-of-3">
+            </lightning-input>
+    
+            <lightning-input
+                type="date"
+                name="destinationTimeFilter"
+                label="Filter by Destination Time"
+                value={selectedDestinationTime}
+                onchange={handleDestinationTimeChange}
+                class="slds-col slds-size_1-of-3">
+            </lightning-input>
+        </div>
+    
+        <lightning-datatable
+            key-field="Id"
+            data={flights}
+            columns={columns}
+            hide-checkbox-column="true"
+            onrowaction={handleRowAction}>
+        </lightning-datatable>
+    </lightning-card>    
+</template>

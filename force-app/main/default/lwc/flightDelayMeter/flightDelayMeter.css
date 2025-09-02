@@ -1,0 +1,40 @@
+.meter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem;
+    border: 1px solid #d8dde6;
+    border-radius: 1rem;
+    background-color: #f4f6f9;
+    box-sizing: border-box;
+}
+
+.meter-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px; /* optional max width */
+}
+
+.hours {
+    font-size: 5vw; /* responsive big font */
+    font-weight: bold;
+    color: #d32f2f; /* red for delay */
+    margin-right: 1rem;
+}
+
+.minutes {
+    font-size: 2vw; /* smaller responsive font */
+    color: #555;
+}
+
+.description {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+}

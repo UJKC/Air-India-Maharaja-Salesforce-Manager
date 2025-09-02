@@ -1,0 +1,32 @@
+<template>
+    <div class="slds-p-around_small" style="width: 100%;">
+        <h2 class="slds-text-heading_small slds-m-bottom_small">{title}</h2>
+
+        <template if:true={paginatedFlights}>
+            <template for:each={paginatedFlights} for:item="flight">
+                <div key={flight.Id}
+                     class={flight.cssClass}
+                     data-id={flight.Id}
+                     onclick={handleClick}
+                     style="cursor:pointer; width: 100%;">
+                    <div class="slds-grid slds-grid_vertical-align-center slds-p-around_small">
+                        <div class="slds-col slds-size_1-of-1">
+                            <p><strong>{flight.Name}</strong></p>
+                            <p>Status: {flight.Status__c}</p>
+                            <p>From: {flight.Start_Airport__r.Name}</p>
+                            <p>To: {flight.End_Airport__r.Name}</p>
+                            <p>{timeLabel}: {flight.displayTime}</p>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </template>
+
+        <!-- Pagination Controls -->
+        <div class="slds-m-top_medium slds-text-align_center">
+            <lightning-button variant="neutral" label="Previous" onclick={handlePrev} disabled={isPrevDisabled}></lightning-button>
+            <span class="slds-m-horizontal_small">Page {currentPage} of {totalPages}</span>
+            <lightning-button variant="neutral" label="Next" onclick={handleNext} disabled={isNextDisabled}></lightning-button>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Incidents Related to Maintenance">
+        <template if:true={hasIncidents}>
+            <div class="slds-grid slds-wrap slds-p-around_small">
+                <template for:each={incidents} for:item="incident">
+                    <div key={incident.Id} class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                        <div class={incident.cssClass}
+                             data-id={incident.Id}
+                             onclick={navigateToIncident}
+                             style="cursor: pointer;">
+                             
+                            <lightning-icon icon-name="utility:warning" size="small" class="slds-m-bottom_small"></lightning-icon>
+                            <p class="slds-text-heading_small">{incident.Name}</p>
+                            <p><b>Status:</b> {incident.Status__c}</p>
+                            <p><b>Created:</b> {incident.CreatedDate}</p>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+        <template if:false={hasIncidents}>
+            <p class="slds-p-around_small">No incidents found for this maintenance.</p>
+        </template>
+    </lightning-card>
+</template>

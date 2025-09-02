@@ -1,0 +1,22 @@
+<template>
+    <template if:true={showForm}>
+        <lightning-card title="Update Flight Delay Reason" icon-name="standard:clock">
+            <div class="slds-p-around_medium">
+                <lightning-textarea 
+                    label="Delay Reason"
+                    value={reason}
+                    onchange={handleChange}
+                    placeholder="Enter reason for the delay..."
+                    class="slds-m-bottom_small">
+                </lightning-textarea>
+
+                <lightning-button
+                    label="Update"
+                    variant="brand"
+                    onclick={handleSubmit}
+                    disabled={isSubmitting}>
+                </lightning-button>
+            </div>
+        </lightning-card>
+    </template>
+</template>

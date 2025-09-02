@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Pre Flight Task">
+        <template if:true={preFlightTask}>
+            <div class="slds-box slds-m-around_medium slds-theme_alt-inverse slds-rounded_medium slds-shadow_small"
+                style="cursor:pointer;" onclick={navigateToTask}>
+                <h3 class="slds-text-heading_small slds-m-bottom_small">
+                    {preFlightTask.Name}
+                </h3>
+                <div class="slds-grid slds-wrap slds-gutters_small">
+                    <template for:each={checkboxes} for:item="field">
+                        <div key={field.label} class="slds-col slds-size_1-of-2 slds-m-bottom_x-small checkbox-item">
+                            <lightning-icon icon-name="utility:check" size="small" class={field.iconClass}>
+                            </lightning-icon>
+                            <span class={field.textClass}>{field.label}</span>
+                        </div>
+                    </template>
+
+                </div>
+                <p class="slds-m-top_small"><b>{checkedCount}/{totalCount}</b> checked</p>
+            </div>
+        </template>
+        <template if:false={preFlightTask}>
+            <p class="slds-text-color_weak slds-m-around_small">No Pre-Flight Task found.</p>
+        </template>
+    </lightning-card>
+</template>

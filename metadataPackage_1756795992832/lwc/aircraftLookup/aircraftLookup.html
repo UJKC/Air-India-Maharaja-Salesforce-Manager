@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Select Aircraft">
+        <div class="slds-m-around_medium">
+            <lightning-input
+                type="search"
+                label="Search Aircraft"
+                placeholder="Type to search Aircraft"
+                value={searchKey}
+                onchange={handleSearchKeyChange}>
+            </lightning-input>
+
+            <template if:true={results}>
+                <ul class="slds-list_vertical slds-m-top_small">
+                    <template for:each={results} for:item="aircraft">
+                        <li key={aircraft.Id} class="slds-list_horizontal slds-p-vertical_xx-small">
+                            <a href="javascript:void(0);" 
+                               data-id={aircraft.Id} 
+                               data-name={aircraft.Name} 
+                               onclick={handleSelect}>
+                                {aircraft.Name}
+                            </a>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+        </div>
+    </lightning-card>
+</template>

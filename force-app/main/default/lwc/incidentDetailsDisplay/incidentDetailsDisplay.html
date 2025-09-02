@@ -1,0 +1,48 @@
+<template>
+    <lightning-card title="Aircraft Details" icon-name="standard:airplane">
+      <div class="slds-p-around_medium">
+        <template if:true={aircraft}>
+          <lightning-layout multiple-rows="true">
+            <lightning-layout-item size="12" class="slds-m-bottom_small">
+              <lightning-formatted-text value="Name:" class="slds-text-title_bold"></lightning-formatted-text>
+              <div>{aircraft.Name}</div>
+            </lightning-layout-item>
+  
+            <lightning-layout-item size="6">
+              <lightning-formatted-text value="Model:" class="slds-text-title_bold"></lightning-formatted-text>
+              <div>{aircraft.Model_Name__c}</div>
+            </lightning-layout-item>
+  
+            <lightning-layout-item size="6">
+              <lightning-formatted-text value="Manufacturer:" class="slds-text-title_bold"></lightning-formatted-text>
+              <div>{aircraft.Manufacturer__c}</div>
+            </lightning-layout-item>
+  
+            <lightning-layout-item size="6">
+              <lightning-formatted-text value="Capacity:" class="slds-text-title_bold"></lightning-formatted-text>
+              <div>{aircraft.Capacity__c}</div>
+            </lightning-layout-item>
+  
+            <lightning-layout-item size="6">
+              <lightning-formatted-text value="Type:" class="slds-text-title_bold"></lightning-formatted-text>
+              <div>{aircraft.Type__c}</div>
+            </lightning-layout-item>
+  
+            <lightning-layout-item size="6">
+              <lightning-formatted-text value="Available:" class="slds-text-title_bold"></lightning-formatted-text>
+              <div>{aircraft.IsAvailable__c}</div>
+            </lightning-layout-item>
+  
+            <lightning-layout-item size="6">
+              <lightning-formatted-text value="Next Maintenance:" class="slds-text-title_bold"></lightning-formatted-text>
+              <div>{aircraft.Next_Scheduled_Maintenance__c}</div>
+            </lightning-layout-item>
+          </lightning-layout>
+        </template>
+  
+        <template if:true={error}>
+          <p class="slds-text-color_error">⚠️ Error loading aircraft details.</p>
+        </template>
+      </div>
+    </lightning-card>
+  </template>

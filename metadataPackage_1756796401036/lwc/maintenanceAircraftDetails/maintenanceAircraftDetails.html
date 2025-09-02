@@ -1,0 +1,47 @@
+<template>
+    <lightning-card title="Maintenance - Aircraft Details" icon-name="utility:settings">
+        <template if:true={hasAircraft}>
+            <div class="slds-p-around_medium slds-grid slds-wrap slds-grid_pull-padded">
+                
+                <!-- Aircraft Info -->
+                <div class="slds-col slds-size_1-of-1 slds-m-bottom_medium">
+                    <lightning-icon icon-name="standard:airplane" size="large" class="slds-m-right_small"></lightning-icon>
+                    <span class="slds-text-heading_medium">{maintenance.Aircraft__r.Name}</span>
+                </div>
+
+                <!-- Manufacturer -->
+                <div class="slds-col slds-size_1-of-2 slds-p-around_small">
+                    <lightning-icon icon-name="utility:company" size="small" alternative-text="Manufacturer"></lightning-icon>
+                    <span class="slds-m-left_small"><b>Manufacturer:</b> {maintenance.Aircraft__r.Manufacturer__c}</span>
+                </div>
+
+                <!-- Model -->
+                <div class="slds-col slds-size_1-of-2 slds-p-around_small">
+                    <lightning-icon icon-name="utility:apps" size="small" alternative-text="Model"></lightning-icon>
+                    <span class="slds-m-left_small"><b>Model:</b> {maintenance.Aircraft__r.Model_Name__c}</span>
+                </div>
+
+                <!-- Capacity -->
+                <div class="slds-col slds-size_1-of-2 slds-p-around_small">
+                    <lightning-icon icon-name="utility:people" size="small" alternative-text="Capacity"></lightning-icon>
+                    <span class="slds-m-left_small"><b>Capacity:</b> {maintenance.Aircraft__r.Capacity__c}</span>
+                </div>
+
+                <!-- Status -->
+                <div class="slds-col slds-size_1-of-2 slds-p-around_small">
+                    <lightning-icon icon-name="utility:check" size="small" alternative-text="Status"></lightning-icon>
+                    <span class="slds-m-left_small"><b>Available:</b> {maintenance.Aircraft__r.IsAvailable__c}</span>
+                </div>
+
+                <!-- Navigate Button -->
+                <div class="slds-col slds-size_1-of-1 slds-m-top_medium">
+                    <lightning-button variant="brand" label="View Aircraft Record" onclick={navigateToAircraft}></lightning-button>
+                </div>
+            </div>
+        </template>
+
+        <template if:true={error}>
+            <c-error-panel errors={error}></c-error-panel>
+        </template>
+    </lightning-card>
+</template>

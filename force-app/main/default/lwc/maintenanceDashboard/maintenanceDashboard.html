@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Maintenance Record">
+        <template if:true={hasMaintenances}>
+            <div class="maintenance-container">
+                <template for:each={maintenances} for:item="m">
+                    <div key={m.Id} class={m.cardClass} data-id={m.Id} onclick={handleNavigate}>
+                        <div class="status">{m.Status__c}</div>
+                        <div class="name">{m.Name}</div>
+                        <div class="date">{m.Maintenance_Date__c}</div>
+                        <div class="checkbox-count">
+                            <span class="big">{m.checkedCount}</span>/<span>{m.totalCheckboxes}</span>
+                        </div>
+                    </div>
+
+                </template>
+            </div>
+        </template>
+
+        <template if:true={error}>
+            <p class="slds-text-color_error slds-m-around_medium">Error loading maintenance records.</p>
+        </template>
+
+        <template if:false={hasMaintenances}>
+            <p class="slds-text-color_weak slds-m-around_medium">No maintenance records found.</p>
+        </template>
+    </lightning-card>
+</template>

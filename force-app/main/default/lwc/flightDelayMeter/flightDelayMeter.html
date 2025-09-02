@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Logged Delay Hours">
+        <template if:true={hasDelay}>
+            <div class="meter-container slds-m-around_medium" onclick={navigateToDelayLog} style="cursor:pointer;">
+                <div class="meter-content">
+                    <div class="hours">{delayLog.Delay_Duration__c}</div> hours
+                    <div class="minutes">{delayLog.Minute__c}</div> min
+                </div>
+                <div class="description">{delayLog.Description__c}</div>
+            </div>
+        </template>
+
+        <template if:true={error}>
+            <p class="slds-text-color_error">Error loading delay log.</p>
+        </template>
+
+        <template if:false={hasDelay}>
+            <p class="slds-text-color_weak">No delay log found.</p>
+        </template>
+    </lightning-card>
+</template>

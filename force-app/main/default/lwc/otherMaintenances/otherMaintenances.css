@@ -1,0 +1,26 @@
+.status-card {
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: #ffffff;
+}
+
+.status-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Status-based colors */
+.scheduled {
+    border-left: 6px solid #1b96ff; /* Blue */
+}
+.inprogress {
+    border-left: 6px solid #ff9800; /* Orange */
+}
+.cleared {
+    border-left: 6px solid #28a745; /* Green */
+}
+.objection {
+    border-left: 6px solid #dc3545; /* Red */
+}

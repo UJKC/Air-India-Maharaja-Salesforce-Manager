@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Model_Name__c</fullName>
+    <label>Model Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Manufacturer__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Boeing 787</fullName>
+                <default>false</default>
+                <label>Boeing 787</label>
+            </value>
+            <value>
+                <fullName>Boeing 777</fullName>
+                <default>false</default>
+                <label>Boeing 777</label>
+            </value>
+            <value>
+                <fullName>Airbus A350</fullName>
+                <default>false</default>
+                <label>Airbus A350</label>
+            </value>
+            <value>
+                <fullName>Bombardier CRJ900</fullName>
+                <default>false</default>
+                <label>Bombardier CRJ900</label>
+            </value>
+            <value>
+                <fullName>Boeing 737</fullName>
+                <default>false</default>
+                <label>Boeing 737</label>
+            </value>
+            <value>
+                <fullName>Embraer E190</fullName>
+                <default>false</default>
+                <label>Embraer E190</label>
+            </value>
+            <value>
+                <fullName>Gulfstream G650</fullName>
+                <default>false</default>
+                <label>Gulfstream G650</label>
+            </value>
+            <value>
+                <fullName>Cessna Citation X</fullName>
+                <default>false</default>
+                <label>Cessna Citation X</label>
+            </value>
+            <value>
+                <fullName>Airbus A320</fullName>
+                <default>false</default>
+                <label>Airbus A320</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Airbus</controllingFieldValue>
+            <valueName>Airbus A350</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airbus</controllingFieldValue>
+            <valueName>Airbus A320</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Boeing</controllingFieldValue>
+            <valueName>Boeing 787</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Boeing</controllingFieldValue>
+            <valueName>Boeing 777</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Boeing</controllingFieldValue>
+            <valueName>Boeing 737</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cessna</controllingFieldValue>
+            <valueName>Cessna Citation X</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gulfstream</controllingFieldValue>
+            <valueName>Gulfstream G650</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bombardier</controllingFieldValue>
+            <valueName>Bombardier CRJ900</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bombardier</controllingFieldValue>
+            <valueName>Embraer E190</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

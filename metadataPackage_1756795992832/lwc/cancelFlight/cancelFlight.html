@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Cancel Flight" icon-name="utility:warning">
+        <div class="slds-p-around_medium">
+            <p>
+                <strong>
+                    Click the button below to cancel this flight.
+                </strong>
+            </p>
+        </div>
+
+        <div class="slds-p-around_medium">
+            <lightning-button 
+                label="Cancel Flight"
+                variant="destructive"
+                onclick={handleCancel}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

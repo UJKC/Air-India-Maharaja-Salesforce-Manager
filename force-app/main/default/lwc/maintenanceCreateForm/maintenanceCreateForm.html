@@ -1,0 +1,39 @@
+<template>
+    <lightning-card title="Create Maintenance Record" icon-name="standard:maintenance_asset">
+        <div class="slds-p-around_medium">
+            
+            <!-- Aircraft Selection -->
+            <lightning-combobox
+                name="aircraft"
+                label="Select Aircraft"
+                value={aircraftId}
+                options={aircraftOptions}
+                onchange={handleAircraftChange}>
+            </lightning-combobox>
+
+            <!-- Record Form -->
+            <lightning-record-edit-form
+                object-api-name="Maintenance__c"
+                onsuccess={handleSuccess}
+                onerror={handleError}
+                onsubmit={handleSubmit}>
+
+                <lightning-messages></lightning-messages>
+
+                <lightning-input-field field-name="Aircraft__c"></lightning-input-field>
+                <lightning-input-field field-name="Maintenance_Date__c"></lightning-input-field>
+                <lightning-input-field field-name="Status__c"></lightning-input-field>
+                <lightning-input-field field-name="Airframe_Inspection__c"></lightning-input-field>
+                <lightning-input-field field-name="Avionics_and_Instruments__c"></lightning-input-field>
+                <lightning-input-field field-name="Cabin_and_Interior__c"></lightning-input-field>
+                <lightning-input-field field-name="Documentation_and_Compliance__c"></lightning-input-field>
+                <lightning-input-field field-name="Electrical_Systems__c"></lightning-input-field>
+                <lightning-input-field field-name="Fire_Protection_and_Safety_Equipment__c"></lightning-input-field>
+                <lightning-input-field field-name="Hydraulic_and_Pneumatic_Systems__c"></lightning-input-field>
+                <lightning-input-field field-name="Powerplant_Engine__c"></lightning-input-field>
+
+                <lightning-button class="slds-m-top_medium" type="submit" variant="brand" label="Create"></lightning-button>
+            </lightning-record-edit-form>
+        </div>
+    </lightning-card>
+</template>

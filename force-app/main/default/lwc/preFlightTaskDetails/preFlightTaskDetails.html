@@ -1,0 +1,29 @@
+<template>
+    <template if:true={task}>
+        <lightning-card title="✈️ Flight Details" icon-name="standard:flight">
+            <div class="flight-details-container" style="cursor:pointer;" onclick={navigateToFlight}>
+                <p class="slds-text-heading_small slds-m-bottom_medium">
+                    <strong>🛫 Flight:</strong> {task.Flight__r.Name}
+                </p>
+                <p><strong>🛩️ Aircraft:</strong> {task.Aircraft__r.Name}</p>
+                <p><strong>📅 Scheduled Departure:</strong> {task.formattedSchedule}</p>
+                <p><strong>🕒 Scheduled Arrival:</strong> {task.formattedArrival}</p>
+                <p><strong>⏳ Delayed:</strong> {task.Flight__r.Delayed__c}</p>
+                <p><strong>📌 Status:</strong> {task.Flight__r.Status__c}</p>
+                <p><strong>🧭 Flight Type:</strong> {task.Flight__r.Flight_Type__c}</p>
+            </div>
+        </lightning-card>
+    </template>
+
+    <template if:true={error}>
+        <div class="slds-p-around_medium slds-text-color_error">
+            <p>⚠️ {error}</p>
+        </div>
+    </template>
+
+    <template if:false={task}>
+        <div class="slds-p-around_medium slds-text-color_weak">
+            <p>ℹ️ No incidents reported.</p>
+        </div>
+    </template>
+</template>

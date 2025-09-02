@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="🛠️ Incident Details" icon-name="standard:incident">
+        <template if:true={incidents}>
+            <div class="slds-grid slds-wrap slds-gutters slds-p-around_medium">
+                <template for:each={incidents} for:item="incident">
+                    <div key={incident.Id} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                        <div class={incident.cardClass}>
+                            <p class="slds-text-heading_small slds-m-bottom_x-small">
+                                <strong>🆔 Issue ID:</strong> {incident.Name}
+                            </p>
+                            <p><strong>📝 Description:</strong> {incident.Describe_Incident__c}</p>
+                            <p><strong>📌 Issue:</strong> {incident.Concerned_Issue__c}</p>
+                            <p><strong>📊 Status:</strong> {incident.Status__c}</p>
+                            <p><strong>🔍 Root Cause:</strong> {incident.Root_cause_analysis__c}</p>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+
+        <template if:true={error}>
+            <div class="slds-p-around_medium slds-text-color_error">
+                <p>⚠️ {error}</p>
+            </div>
+        </template>
+
+        <template if:false={incidents}>
+            <lightning-card title="✈️ Flight Details" icon-name="standard:flight">
+                <div class="slds-p-around_medium slds-text-color_weak">
+                    <p>ℹ️ No incidents reported.</p>
+                </div>
+            </lightning-card>
+        </template>
+    </lightning-card>
+</template>

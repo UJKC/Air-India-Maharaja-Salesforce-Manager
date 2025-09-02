@@ -1,0 +1,7 @@
+.flight-details-container {
+    background-color: #f4f6f9; /* soft grey */
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #d8dde6;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}

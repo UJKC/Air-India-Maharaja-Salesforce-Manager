@@ -1,0 +1,63 @@
+<template>
+    <lightning-card title="📌 Due Today or Overdue Incidents" icon-name="standard:incident">
+        <!-- Empty State -->
+        <template if:true={isEmpty}>
+            <p class="slds-p-around_medium slds-text-color_weak">
+                ✅ No due or overdue incidents
+            </p>
+        </template>
+
+        <!-- Data Cards -->
+        <template if:false={isEmpty}>
+            <div class="slds-grid slds-wrap slds-gutters">
+                <template for:each={paginatedIncidents} for:item="incident">
+                    <div key={incident.Id} 
+                         class="slds-col 
+                                slds-size_1-of-1 
+                                slds-small-size_1-of-2 
+                                slds-medium-size_1-of-3 
+                                slds-large-size_1-of-4">
+                        <div class="incident-card slds-box slds-m-around_x-small" 
+                             data-id={incident.Id} 
+                             onclick={handleCardClick}>
+                            <p class="incident-title">{incident.Concerned_Issue__c}</p>
+                            <p><strong>Aircraft:</strong> {incident.Aircraft__r.Name}</p>
+                            <p><strong>Status:</strong> {incident.Status__c}</p>
+                            <p>
+                                <strong>Due Date:</strong>
+                                <lightning-formatted-date-time 
+                                    value={incident.Complete_By__c}
+                                    year="numeric"
+                                    month="short"
+                                    day="2-digit"
+                                    hour="2-digit"
+                                    minute="2-digit"
+                                    time-zone="UTC">
+                                </lightning-formatted-date-time>
+                            </p>
+                        </div>
+                    </div>
+                </template>
+            </div>
+
+            <!-- Pagination Controls -->
+            <div class="slds-m-around_medium slds-align_absolute-center">
+                <lightning-button 
+                    label="Previous" 
+                    onclick={prevPage} 
+                    disabled={disablePrev}>
+                </lightning-button>
+
+                <span class="slds-m-horizontal_small">
+                    Page {currentPage} of {totalPages}
+                </span>
+
+                <lightning-button 
+                    label="Next" 
+                    onclick={nextPage} 
+                    disabled={disableNext}>
+                </lightning-button>
+            </div>
+        </template>
+    </lightning-card>
+</template>

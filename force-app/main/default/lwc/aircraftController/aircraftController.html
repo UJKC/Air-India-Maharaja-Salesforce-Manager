@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="✈️ Aircraft Details" icon-name="standard:airplane">
+        <template if:true={aircraft}>
+            <div class="slds-p-around_medium slds-box slds-theme_shade">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="12" class="slds-m-bottom_small">
+                        <p><strong>Name:</strong> {aircraft.Name}</p>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" class="slds-m-bottom_small">
+                        <p><strong>Model:</strong> {aircraft.Model_Name__c}</p>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" class="slds-m-bottom_small">
+                        <p><strong>Manufacturer:</strong> {aircraft.Manufacturer__c}</p>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" class="slds-m-bottom_small">
+                        <p><strong>Type:</strong> {aircraft.Type__c}</p>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" class="slds-m-bottom_small">
+                        <p><strong>Capacity:</strong> {aircraft.Capacity__c}</p>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" class="slds-m-bottom_small">
+                        <p><strong>Next Scheduled Maintenance:</strong> {aircraft.Next_Scheduled_Maintenance__c}</p>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+        </template>
+
+        <template if:true={error}>
+            <div class="slds-p-around_medium slds-text-color_error slds-theme_alert-texture">
+                ⚠️ {error}
+            </div>
+        </template>
+    </lightning-card>
+</template>

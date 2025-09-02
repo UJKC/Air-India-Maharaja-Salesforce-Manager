@@ -1,0 +1,12 @@
+<template>
+    <template if:true={isAvailable}>
+        <div class="banner available">
+            Available
+        </div>
+    </template>
+    <template if:false={isAvailable}>
+        <div class="banner in-use">
+            In Use
+        </div>
+    </template>
+</template>

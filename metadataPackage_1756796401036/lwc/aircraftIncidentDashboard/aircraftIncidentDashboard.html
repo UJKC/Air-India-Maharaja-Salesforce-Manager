@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Incident Raised">
+        <template if:true={hasIncidents}>
+            <div class="incident-container">
+                <template for:each={incidents} for:item="incident">
+                    <div key={incident.Id} class={incident.cardClass} data-id={incident.Id} onclick={handleNavigate}>
+                        <div class="incident-name">{incident.Name}</div>
+                        <div class="incident-status">{incident.Status__c}</div>
+                        <template if:true={incident.Describe_Incident__c}>
+                            <div class="incident-desc">{incident.Describe_Incident__c}</div>
+                        </template>
+                    </div>
+
+
+                </template>
+            </div>
+        </template>
+
+        <template if:true={error}>
+            <p class="slds-text-color_error slds-m-around_medium">Error loading incidents.</p>
+        </template>
+
+        <template if:false={hasIncidents}>
+            <p class="slds-text-color_weak slds-m-around_medium">No incidents found.</p>
+        </template>
+    </lightning-card>
+</template>

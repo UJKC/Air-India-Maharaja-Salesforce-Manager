@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Incidents">
+        <template if:true={hasIncidents}>
+            <div class="slds-grid slds-wrap slds-p-around_medium slds-gutters_small">
+                <template for:each={incidentsData} for:item="incident">
+                    <div key={incident.Id} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3">
+                        <div class="slds-box slds-box_x-small slds-theme_default slds-hint-parent" 
+                             data-id={incident.Id} onclick={handleNavigate}>
+                            <div class="slds-text-heading_small slds-truncate" title={incident.Name}>
+                                {incident.Name}
+                            </div>
+                            <div class="slds-text-body_small slds-m-top_xx-small">
+                                <strong>Status:</strong> {incident.Status__c}
+                            </div>
+                            <template if:true={incident.Describe_Incident__c}>
+                                <div class="slds-text-body_small slds-m-top_xx-small slds-text-color_weak">
+                                    {incident.Describe_Incident__c}
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+
+        <template if:true={error}>
+            <p class="slds-text-color_error slds-m-around_medium">Error loading incidents.</p>
+        </template>
+
+        <template if:false={hasIncidents}>
+            <p class="slds-text-color_weak slds-m-around_medium">No incidents found.</p>
+        </template>
+    </lightning-card>
+</template>

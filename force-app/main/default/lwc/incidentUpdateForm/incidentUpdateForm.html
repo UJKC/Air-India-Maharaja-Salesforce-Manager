@@ -1,0 +1,62 @@
+<template>
+    <lightning-card title="Search & Update Incident" icon-name="standard:incident">
+        <div class="slds-p-around_small">
+            <!-- Search input -->
+            <lightning-input
+                type="search"
+                label="Search Incident"
+                placeholder="Type to search"
+                onchange={handleSearchKeyChange}
+                value={searchKey}>
+            </lightning-input>
+
+            <!-- Search results -->
+            <template if:true={searchResults.length}>
+                <ul class="slds-list_horizontal slds-m-top_small">
+                    <template for:each={searchResults} for:item="record">
+                        <li key={record.Id}>
+                            <lightning-button 
+                                label={record.Name} 
+                                onclick={handleSelectRecord} 
+                                data-id={record.Id} 
+                                variant="neutral">
+                            </lightning-button>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+            <template if:true={incidentId}>
+                <div class="slds-m-top_medium">
+                    <!-- Name (read-only) -->
+                    <lightning-input 
+                        label="Name" 
+                        value={incidentId.Name} 
+                        disabled>
+                    </lightning-input>
+                    <lightning-input 
+                        label="Root Cause Analysis" 
+                        value={incidentId.Root_cause_analysis__c}
+                        disabled>
+                    </lightning-input>
+
+                    <!-- Status picklist -->
+                    <lightning-combobox
+                        label="Status"
+                        value={incidentId.Status__c}
+                        options={statusOptions}
+                        onchange={handleStatusChange}
+                        data-field="Status__c">
+                    </lightning-combobox>
+
+                    <!-- Save Button -->
+                    <lightning-button 
+                        label="Save" 
+                        variant="brand" 
+                        class="slds-m-top_medium" 
+                        onclick={handleSave}>
+                    </lightning-button>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

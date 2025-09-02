@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Maintenance History" icon-name="utility:wrench">
+        <template if:true={maintenances}>
+            <div class="slds-grid slds-wrap">
+                <template for:each={maintenances} for:item="m">
+                    <div key={m.Id} class="slds-col slds-size_1-of-3 slds-p-around_small">
+                        <div class={m.cardClass} onclick={navigateToRecord} data-id={m.Id}>
+                            <div class="slds-p-around_medium">
+                                <lightning-icon 
+                                    icon-name={m.iconName}
+                                    alternative-text="status"
+                                    size="small"
+                                    class="slds-m-bottom_small">
+                                </lightning-icon>
+
+                                <h2 class="slds-text-heading_small">{m.Name}</h2>
+                                <p class="slds-text-body_small"><b>Date:</b> {m.Maintenance_Date__c}</p>
+                                <p class="slds-text-body_small"><b>Status:</b> {m.Status__c}</p>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </lightning-card>
+</template>

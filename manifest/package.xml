@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <!-- Apex Classes -->
+    <types>
+        <members>*</members>
+        <name>ApexClass</name>
+    </types>
+
+    <!-- Apex Triggers -->
+    <types>
+        <members>*</members>
+        <name>ApexTrigger</name>
+    </types>
+
+    <!-- Lightning Web Components -->
+    <types>
+        <members>*</members>
+        <name>LightningComponentBundle</name>
+    </types>
+
+    <!-- Custom Objects -->
+    <types>
+        <members>*</members>
+        <name>CustomObject</name>
+    </types>
+
+    <!-- Custom Fields -->
+    <types>
+        <members>*</members>
+        <name>CustomField</name>
+    </types>
+
+    <!-- Page Layouts -->
+    <types>
+        <members>*</members>
+        <name>Layout</name>
+    </types>
+
+    <!-- Profiles -->
+    <types>
+        <members>*</members>
+        <name>Profile</name>
+    </types>
+
+    <!-- Permission Sets -->
+    <types>
+        <members>*</members>
+        <name>PermissionSet</name>
+    </types>
+
+    <!-- Tabs -->
+    <types>
+        <members>*</members>
+        <name>CustomTab</name>
+    </types>
+
+    <!-- Applications -->
+    <types>
+        <members>*</members>
+        <name>CustomApplication</name>
+    </types>
+
+    <!-- Static Resources -->
+    <types>
+        <members>*</members>
+        <name>StaticResource</name>
+    </types>
+
+    <!-- Visualforce Pages -->
+    <types>
+        <members>*</members>
+        <name>ApexPage</name>
+    </types>
+
+    <!-- Visualforce Components -->
+    <types>
+        <members>*</members>
+        <name>ApexComponent</name>
+    </types>
+
+    <!-- Workflows -->
+    <types>
+        <members>*</members>
+        <name>Workflow</name>
+    </types>
+
+    <types>
+        <members>*</members>
+        <name>FlexiPage</name>
+    </types>
+
+    <!-- Validation Rules -->
+    <types>
+        <members>*</members>
+        <name>ValidationRule</name>
+    </types>
+
+    <!-- Flows -->
+    <types>
+        <members>*</members>
+        <name>Flow</name>
+    </types>
+
+    <!-- Email Templates -->
+    <types>
+        <members>*</members>
+        <name>EmailTemplate</name>
+    </types>
+
+    <!-- Reports -->
+    <types>
+        <members>*</members>
+        <name>Report</name>
+    </types>
+
+    <!-- Dashboards -->
+    <types>
+        <members>*</members>
+        <name>Dashboard</name>
+    </types>
+
+    <!-- Record Types -->
+    <types>
+        <members>*</members>
+        <name>RecordType</name>
+    </types>
+
+    <!-- Sharing Rules -->
+    <types>
+        <members>*</members>
+        <name>SharingRules</name>
+    </types>
+
+    <!-- Remote Site Settings -->
+    <types>
+        <members>*</members>
+        <name>RemoteSiteSetting</name>
+    </types>
+
+    <!-- Named Credentials -->
+    <types>
+        <members>*</members>
+        <name>NamedCredential</name>
+    </types>
+
+    <!-- Custom Metadata Types -->
+    <types>
+        <members>*</members>
+        <name>CustomMetadata</name>
+    </types>
+
+    <!-- Custom Settings -->
+    <types>
+        <members>*</members>
+        <name>CustomSite</name>
+    </types>
+
+    <!-- Labels -->
+    <types>
+        <members>*</members>
+        <name>CustomLabels</name>
+    </types>
+
+    <!-- Org Preferences -->
+    <types>
+        <members>*</members>
+        <name>Settings</name>
+    </types>
+
+    <types>
+        <members>*</members>
+        <name>AssignmentRules</name>
+    </types>
+
+    <types>
+        <members>*</members>
+        <name>StandardValueSet</name>
+    </types>
+
+    <!-- API Version -->
+    <version>64.0</version>
+</Package>

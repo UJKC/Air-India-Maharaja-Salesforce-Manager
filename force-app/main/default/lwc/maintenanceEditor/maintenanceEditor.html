@@ -1,0 +1,119 @@
+<template>
+    <lightning-card title="Maintenance Editor" icon-name="action:edit">
+        <div class="slds-m-around_medium">
+            <!-- Search -->
+            <lightning-input 
+                label="Search Maintenance" 
+                value={searchKey} 
+                onchange={handleSearchChange} 
+                placeholder="Enter Name">
+            </lightning-input>
+
+            <template if:true={searchResults.length}>
+                <ul class="slds-list_horizontal slds-m-top_small">
+                    <template for:each={searchResults} for:item="record">
+                        <li key={record.Id}>
+                            <lightning-button 
+                                label={record.Name} 
+                                onclick={handleSelectRecord} 
+                                data-id={record.Id} 
+                                variant="neutral">
+                            </lightning-button>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+
+            <template if:true={maintenance}>
+                <div class="slds-m-top_medium">
+                    <!-- Name (read-only) -->
+                    <lightning-input 
+                        label="Name" 
+                        value={maintenance.Name} 
+                        disabled>
+                    </lightning-input>
+                    <lightning-input 
+                        label="Aircraft" 
+                        value={aircraftName}
+                        disabled>
+                    </lightning-input>
+
+                    <!-- Status picklist -->
+                    <lightning-combobox
+                        label="Status"
+                        value={maintenance.Status__c}
+                        options={statusOptions}
+                        onchange={handleFieldChange}
+                        data-field="Status__c">
+                    </lightning-combobox>
+
+                    <!-- Checkbox fields -->
+                    <lightning-input 
+                        type="checkbox" 
+                        label="Airframe Inspection" 
+                        checked={maintenance.Airframe_Inspection__c} 
+                        data-field="Airframe_Inspection__c" 
+                        onchange={handleFieldChange}>
+                    </lightning-input>
+                    <lightning-input 
+                        type="checkbox" 
+                        label="Avionics and Instruments" 
+                        checked={maintenance.Avionics_and_Instruments__c} 
+                        data-field="Avionics_and_Instruments__c" 
+                        onchange={handleFieldChange}>
+                    </lightning-input>
+                    <lightning-input 
+                        type="checkbox" 
+                        label="Cabin and Interior" 
+                        checked={maintenance.Cabin_and_Interior__c} 
+                        data-field="Cabin_and_Interior__c" 
+                        onchange={handleFieldChange}>
+                    </lightning-input>
+                    <lightning-input 
+                        type="checkbox" 
+                        label="Documentation and Compliance" 
+                        checked={maintenance.Documentation_and_Compliance__c} 
+                        data-field="Documentation_and_Compliance__c" 
+                        onchange={handleFieldChange}>
+                    </lightning-input>
+                    <lightning-input 
+                        type="checkbox" 
+                        label="Electrical Systems" 
+                        checked={maintenance.Electrical_Systems__c} 
+                        data-field="Electrical_Systems__c" 
+                        onchange={handleFieldChange}>
+                    </lightning-input>
+                    <lightning-input 
+                        type="checkbox" 
+                        label="Fire Protection and Safety Equipment" 
+                        checked={maintenance.Fire_Protection_and_Safety_Equipment__c} 
+                        data-field="Fire_Protection_and_Safety_Equipment__c" 
+                        onchange={handleFieldChange}>
+                    </lightning-input>
+                    <lightning-input 
+                        type="checkbox" 
+                        label="Hydraulic and Pneumatic Systems" 
+                        checked={maintenance.Hydraulic_and_Pneumatic_Systems__c} 
+                        data-field="Hydraulic_and_Pneumatic_Systems__c" 
+                        onchange={handleFieldChange}>
+                    </lightning-input>
+                    <lightning-input 
+                        type="checkbox" 
+                        label="Powerplant Engine" 
+                        checked={maintenance.Powerplant_Engine__c} 
+                        data-field="Powerplant_Engine__c" 
+                        onchange={handleFieldChange}>
+                    </lightning-input>
+
+                    <!-- Save Button -->
+                    <lightning-button 
+                        label="Save" 
+                        variant="brand" 
+                        class="slds-m-top_medium" 
+                        onclick={handleSave}>
+                    </lightning-button>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

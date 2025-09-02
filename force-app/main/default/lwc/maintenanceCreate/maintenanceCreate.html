@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Create Maintenance" icon-name="utility:add">
+        <div class="slds-m-around_medium">
+
+            <!-- Aircraft Lookup -->
+            <c-aircraft-lookup onaircraftselect={handleAircraftSelect}></c-aircraft-lookup>
+            <template if:true={aircraftName}>
+                <p class="slds-m-top_small">Selected Aircraft: {aircraftName}</p>
+            </template>
+
+            <!-- Maintenance Date -->
+            <lightning-input 
+                type="datetime-local" 
+                label="Maintenance Date" 
+                value={maintenanceDate} 
+                onchange={handleDateChange}
+                class="slds-p-around_medium">
+            </lightning-input>
+
+            <!-- Save Button -->
+            <div class="slds-p-around_medium">
+                <lightning-button 
+                    label="Create Maintenance" 
+                    variant="brand" 
+                    onclick={handleSave}>
+                </lightning-button>
+            </div>
+
+        </div>
+    </lightning-card>
+</template>

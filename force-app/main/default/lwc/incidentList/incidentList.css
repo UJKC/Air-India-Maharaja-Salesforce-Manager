@@ -1,0 +1,26 @@
+.incident-card {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.queued {
+    background-color: #f8d7da;
+    border-left: 5px solid #dc3545;
+}
+
+.resolved {
+    background-color: #d4edda;
+    border-left: 5px solid #28a745;
+}
+
+.in-progress {
+    background-color: #fff3cd;
+    border-left: 5px solid #ffc107;
+}
+
+.default {
+    background-color: #f0f4f7;
+    border-left: 5px solid #6c757d;
+}

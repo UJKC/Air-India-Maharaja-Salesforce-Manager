@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Last Reported FLight">
+        <template if:true={flight}>
+            <div class={cardClass} onclick={handleNavigate}>
+                <h2 class="slds-text-heading_medium">{flight.Name}</h2>
+                <p><b>From:</b> {flight.Start_Airport__r.Name}</p>
+                <p><b>To:</b> {flight.End_Airport__r.Name}</p>
+                <p><b>Scheduled:</b> {flight.Schedule__c}</p>
+                <p><b>Destination Time:</b> {flight.Destination_Time__c}</p>
+                <p><b>Status:</b> {flight.Status__c}</p>
+                <p><b>Delayed:</b> {delayedText}</p>
+            </div>
+        </template>
+
+        <template if:true={error}>
+            <p class="slds-text-color_error">Error loading last trip.</p>
+        </template>
+    </lightning-card>
+</template>

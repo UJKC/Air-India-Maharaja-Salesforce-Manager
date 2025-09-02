@@ -1,0 +1,44 @@
+<template>
+    <div class="slds-p-around_small">
+        <!-- Search & Date Filters -->
+        <lightning-input 
+            type="search" 
+            label="Search Flights" 
+            value={searchKey} 
+            onchange={handleSearchChange}
+            class="slds-m-bottom_small">
+        </lightning-input>
+
+        <lightning-input 
+            type="date" 
+            label="Filter by Date" 
+            value={selectedDate} 
+            onchange={handleDateChange}
+            class="slds-m-bottom_medium">
+        </lightning-input>
+    </div>
+
+    <div class="slds-grid slds-wrap">
+        <!-- Arrivals: 50% width -->
+        <div class="slds-col slds-size_1-of-2 slds-p-around_small">
+            <c-flight-list 
+                title="Arrivals"
+                flights={filteredArrivals}
+                time-field="Destination_Time__c"
+                time-label="Destination Time"
+                onflightclick={handleNavigate}>
+            </c-flight-list>
+        </div>
+
+        <!-- Departures: 50% width -->
+        <div class="slds-col slds-size_1-of-2 slds-p-around_small">
+            <c-flight-list 
+                title="Departures"
+                flights={filteredDepartures}
+                time-field="Schedule__c"
+                time-label="Schedule"
+                onflightclick={handleNavigate}>
+            </c-flight-list>
+        </div>
+    </div>
+</template>
